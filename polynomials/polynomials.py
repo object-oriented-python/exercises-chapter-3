@@ -110,6 +110,21 @@ class Polynomial:
                 n += val*(other**power)
             return n
 
+    def dx(self):
+        
+        if self.degree() == 0 :
+            return Polynomial((0,))
+        elif self.degree() :
+            coef = [0]* self.degree()    
+            coef[0] = self.coefficients[1]
+
+            for power,val in enumerate(list(self.coefficients[2:]),start=2):
+                coef[power-1] += val*power
+            return Polynomial(tuple(coef))
+
+
+def derivative(poly):
+    return poly.dx()
 
 
 
