@@ -3,5 +3,5 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name="polynomials"
+name="Polynomials"
 version = "0.1"
